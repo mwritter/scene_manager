@@ -1,12 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import LibraryView from "./components/Library/LibraryView";
+import App from "./components/App";
 
 import "./index.css";
 
-const App = () => (
-  <>
-    <LibraryView />
-  </>
-);
 ReactDOM.render(<App />, document.getElementById("app"));

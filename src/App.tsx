@@ -1,14 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
+
+const PresenterApp = React.lazy(() => import("Presenter/App"));
 
 import "./index.css";
 
 const App = () => (
   <div className="container">
-    <div>Name: scene_manager_next</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
+    <Suspense fallback={<>Oh no</>}>
+      <PresenterApp />
+    </Suspense>
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

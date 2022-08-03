@@ -1,10 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#app {
+  height: 100vh;
+}
+
 .container {
-  font-size: 3rem;
-  margin: auto;
-  max-width: 800px;
-  margin-top: 20px;
+  display: grid;
+  grid-template: "Library . . . . .";
+  height: 100%;
 }

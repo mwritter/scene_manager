@@ -41,9 +41,10 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "scene_manager_next",
-      filename: "remoteEntry.js",
-      remotes: {},
+      name: "scene_manager",
+      remotes: {
+        Presenter: "Presenter@http://localhost:8081/remoteEntry.js",
+      },
       exposes: {},
       shared: {
         ...deps,

@@ -10,6 +10,7 @@ import useLibraryStore, { File } from "../../store/library";
 
 // TODO: create a global theme
 const FileEntryButton = styled(ListItemButton)`
+  padding: 0 1rem;
   &.Mui-selected,
   &.Mui-selected:hover,
   &.Mui-focusVisible,
@@ -18,6 +19,10 @@ const FileEntryButton = styled(ListItemButton)`
     color: black;
   }
 `;
+
+const ItemList = styled(List)`
+  padding-top: 0;
+` as typeof List;
 
 function LibraryContentsView() {
   const { toggleFileSelected, files = [] } = useLibraryStore(
@@ -34,7 +39,7 @@ function LibraryContentsView() {
   }, []);
 
   return (
-    <Box bgcolor={"#262626"} color={"white"} sx={{ width: "100%" }}>
+    <Box flex={1} bgcolor={"#262626"} color={"white"} sx={{ width: "100%" }}>
       <Typography
         paddingLeft={"0.5rem"}
         fontWeight={"bold"}
@@ -44,7 +49,7 @@ function LibraryContentsView() {
       >
         Items
       </Typography>
-      <List component="nav">
+      <ItemList component="nav">
         {files.map((file) => (
           <FileEntryButton
             key={file.name}
@@ -54,7 +59,7 @@ function LibraryContentsView() {
             <ListItemText primary={file.name} />
           </FileEntryButton>
         ))}
-      </List>
+      </ItemList>
     </Box>
   );
 }
